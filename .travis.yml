@@ -30,7 +30,7 @@ jobs:
         python -m twine upload --skip-existing wheelhouse/*;
       fi
     env:
-      - CIBW_SKIP="cp33 cp34"
+      - CIBW_SKIP="cp27-* cp33 cp34"
   - stage: build
     os: osx
     osx_image: xcode12.2
@@ -51,7 +51,7 @@ jobs:
           python -m twine upload --skip-existing wheelhouse/*;
         fi
     env:
-      - CIBW_SKIP="cp33 cp34"
+      - CIBW_SKIP="cp27-* cp33 cp34"
   - stage: deploy
     python: 3.8
     install: skip
